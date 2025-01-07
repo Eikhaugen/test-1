@@ -1,4 +1,20 @@
-//takes in a word and returns true if the word is a palindrome, false if it is not
-export function isWordPalindrome(str) {}
-//takes in a sentence and returns true if the sentence is a palindrome, false if it is not
-export function isSentencePalindrome(str) {}
+export function isWordPalindrome(str) {
+    const lowerCaseString = str.toLowerCase();
+    for (let i = 0, j = lowerCaseString.length - 1; i < j; i++, j--) {
+        if(lowerCaseString[i]!=lowerCaseString[j]){
+            return false
+        }
+    }
+    return true;
+}
+
+export function isSentencePalindrome(str) {
+    const lowerCaseString = str.toLowerCase().replace(/\s+/g, '');
+    for (let i = 0, j = lowerCaseString.length - 1; i < j; i++, j--) {
+        if (lowerCaseString[i] != lowerCaseString[j]) {
+            return false;
+        }
+    }
+    return true;
+}
+
